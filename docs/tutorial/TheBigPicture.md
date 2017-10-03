@@ -4,26 +4,35 @@ Let's review a little:
 
 - Managers are created by decorating an ES6 class with the `@Manage()` decorator.
 
+
 - Action creators are created by either:
   - Decorating a Manager with the `@Actions()` decorator
   - Decorating a Manager method with the `@Action()` decorator
 
+
 - Confluxes are automatically created when a Manager is declared.
+
 
 - Confluxes can be retrieved via `getConflux(ManagerConstructor)` or `getConflux('managerNamespace')`.
 
+
 - The root conflux is retrieved by calling `getConflux()` with no arguments.
+
 
 - Sub-reducers are added to a conflux by decorating a method on its Manager with the `@Reduce()` decorator.
 
+
 - Actions can be intercepted before or after they're dispatched to the store by decorating a Manager method with the `@Before()` or `@After()` decorators.
 
+
 - Selectors are created by decorating a Manager method with the `@Select()` decorator.
+
 
 - Confluxes have 3 main properties:
   - `Conflux.state` - retrieves the current state of the piece of state managed by the Conflux's Manager.
   - `Conflux.action` - retrieves an object containing all the actions declared on the Conflux's Manager.
   - `Conflux.select` - retrieves an object containing all the selectors declared on the Conflux's Manager.
+
 
 Let's put everything together:
 

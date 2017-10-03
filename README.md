@@ -21,6 +21,7 @@ const todos = getConflux(TodosManager)
 todos.action.create('a new todo')
 ```
 
+
 ### Installation
 
 Install using npm:
@@ -29,11 +30,13 @@ Install using npm:
 npm install --save fluxuate
 ```
 
+
 or use unpkg:
 
 ```
 <script src="https://unpkg.com/fluxuate/dist/fluxuate.js"></script>
 ```
+
 
 ### What Is It?
 
@@ -42,6 +45,7 @@ Fluxuate is a suite of opt-in, high-level abstractions on top of Redux. Fluxuate
 Fluxuate is designed to reduce boilerplate wherever possible. It is designed to be easy to read. It provides a declarative syntax for creating a Redux store and defining its behavior.
 
 Note that Fluxuate is in beta. Expect sudden, breaking changes between minor versions.
+
 
 ### The Basics
 
@@ -53,6 +57,7 @@ import { Manage } from 'fluxuate'
 @Manage('todos')
 class TodosManager {}
 ```
+
 
 Managers are a very high-level abstraction. They can define default initial state, bound action creators, sub-reducers, action interceptors, and selectors.
 
@@ -84,6 +89,7 @@ class TodosManager {
     }
 }
 ```
+
 
 Managers are not used directly. Fluxuate creates a Conflux for every Manager. A Conflux is just a normal Redux reducer specially designed to reduce just the portion of state controlled by its Manager.
 
@@ -117,6 +123,7 @@ const store = handleStoreCreation()
 export default store
 ```
 
+
 This will create the Redux store with an empty root reducer. We can load up our Manager whenever we want; before or after the store is created. Fluxuate will dynamically inject the Confluxes of newly-declared Managers into the reducer hierarchy. This makes code splitting a breeze!
 
 ```javascript
@@ -129,6 +136,7 @@ import todos from './store/todos'
 
 store.getState() // { todos: [] }
 ```
+
 
 Apart from being normal Redux reducers, Confluxes have a few special properties.
 
@@ -145,7 +153,8 @@ todos.action.delete(0)
 todos.state // []
 ```
 
-`Conflux.state` is Of particular note here. This is just a dynamic property (a getter) that will calculate the piece of state controlled by the Conflux's Manager. In this case, `todos.state` is an exact shorthand for `store.getState().todos`.
+
+`Conflux.state` is of particular note here. This is just a dynamic property (a getter) that will calculate the piece of state controlled by the Conflux's Manager. In this case, `todos.state` is an exact shorthand for `store.getState().todos`.
 
 Fluxuate will dynamically create the reducer hierarchy.
 
@@ -160,13 +169,16 @@ const store = handleStoreCreation()
 store.getState() // { entities: { todos: { urgent: {} } } }
 ```
 
+
 ### To Be Continued...
 
 That's it for the basics. But there's still plenty more to Fluxuate. Check out the [documentation](//bowheart.github.io/fluxuate) for a much more in-depth rundown.
 
+
 ### Bugs, Suggestions, Feedback, Pull Requests, etc...
 
-Fluxuate is brand new! All suggestions and code contributions are super welcome. Let's make it awesome!
+Fluxuate is brand new! All suggestions and code contributions are super welcome. Let's make it awesome! Bugs can be sumitted to https://github.com/bowheart/fluxuate/issues
+
 
 ### License
 

@@ -1,7 +1,7 @@
 {
   "name": "fluxuate",
   "version": "0.1.0",
-  "description": "",
+  "description": "A beautiful, declarative abstraction layer on top of Redux",
   "files": [
     "dist",
     "src"
@@ -43,6 +43,14 @@
   ],
   "author": "Joshua Claunch",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bowheart/fluxuate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bowheart/fluxuate/issues"
+  },
+  "homepage": "https://github.com/bowheart/fluxuate#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
