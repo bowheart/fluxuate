@@ -176,7 +176,7 @@ export const ADD_TODO = 'ADD_TODO'
 
 // ...a total non-Fluxuate action creator...
 export function addTodo(text) {
-	return { type: ADD_TODO, text }
+	return { type: ADD_TODO, payload: text }
 }
 
 // ... and a little Fluxuate

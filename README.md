@@ -7,12 +7,12 @@ Beautiful Redux
 @Value([])
 @Actions('create')
 class TodosManager {
-	
-	@Reduce('create')
-	reduceCreate(state, text) {
-		let newTodo = { text, completed: false }
-		return [ ...state, newTodo ]
-	}
+    
+    @Reduce('create')
+    reduceCreate(state, text) {
+        let newTodo = { text, completed: false }
+        return [ ...state, newTodo ]
+    }
 }
 
 const store = handleStoreCreation()
@@ -63,25 +63,25 @@ import { Actions, Manage, Reduce, Select, Value } from 'fluxuate'
 @Value([]) // start off with an empty array
 @Actions('create', 'delete')
 class TodosManager {
-	
-	@Reduce('create')
-	reduceCreate(state, text) {
-		let newTodo = { text, completed: false }
-		return [ ...state, newTodo ]
-	}
-	
-	@Reduce('delete')
-	reduceToggle(state, index) {
-		return [
-			...state.slice(0, index),
-			...state.slice(index + 1)
-		]
-	}
-	
-	@Select('incomplete')
-	selectIncomplete() {
-		return this.state.filter(todo => !todo.completed)
-	}
+    
+    @Reduce('create')
+    reduceCreate(state, text) {
+        let newTodo = { text, completed: false }
+        return [ ...state, newTodo ]
+    }
+    
+    @Reduce('delete')
+    reduceToggle(state, index) {
+        return [
+            ...state.slice(0, index),
+            ...state.slice(index + 1)
+        ]
+    }
+    
+    @Select('incomplete')
+    selectIncomplete() {
+        return this.state.filter(todo => !todo.completed)
+    }
 }
 ```
 
@@ -95,7 +95,7 @@ import { createStore } from 'redux'
 @Value([])
 @Actions('create', 'delete')
 class TodosManager {
-	...
+    ...
 }
 
 const todosConflux = getConflux(TodosManager)
