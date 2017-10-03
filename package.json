@@ -1,6 +1,6 @@
 {
   "name": "fluxuate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A beautiful, declarative abstraction layer on top of Redux",
   "files": [
     "dist",
