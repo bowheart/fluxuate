@@ -7,21 +7,21 @@
     "src"
   ],
   "main": "dist/fluxuate.js",
-  "module": "src/index.js",
-  "jsnext:main": "src/index.js",
+  "module": "dist/fluxuate.es.js",
+  "jsnext:main": "dist/fluxuate.es.js",
   "directories": {
     "example": "examples"
   },
   "scripts": {
-    "build": "npm run build:umd && npm run build:umd:min && npm run build:cjs && npm run build:examples",
+    "build": "npm run build:umd && npm run build:umd:min && npm run build:es && npm run build:examples",
     "build:umd": "rollup -c",
     "build:umd:min": "rollup -c -o dist/fluxuate.min.js --environment PRODUCTION",
-    "build:cjs": "rollup -c -f cjs -o dist/fluxuate.node.js",
+    "build:es": "rollup -c -f es -o dist/fluxuate.es.js",
     "build:basic-todo": "rollup -c -i examples/basic-todo/app.js -o examples/basic-todo/index.js",
     "build:cookie-store": "rollup -c -i examples/cookie-store/App.js -o examples/cookie-store/index.js",
     "build:rpg": "rollup -c -i examples/rpg/App.js -o examples/rpg/index.js",
     "build:examples": "npm run build:basic-todo && npm run build:cookie-store && npm run build:rpg",
-    "dev": "npm run build:umd -- -w & npm run build:umd:min -- -w & npm run build:cjs -- -w & npm run dev:examples",
+    "dev": "npm run build:umd -- -w & npm run build:umd:min -- -w & npm run build:es -- -w & npm run dev:examples",
     "dev:examples": "npm run build:basic-todo -- -w & npm run build:cookie-store -- -w & npm run build:rpg -- -w",
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:build": "npm run docs:prepare && gitbook build -g bowheart/fluxuate",

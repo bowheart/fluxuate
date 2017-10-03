@@ -26,14 +26,14 @@ todos.action.create('a new todo')
 
 Install using npm:
 
-```
+```bash
 npm install --save fluxuate
 ```
 
 
 or use unpkg:
 
-```
+```html
 <script src="https://unpkg.com/fluxuate/dist/fluxuate.js"></script>
 ```
 
