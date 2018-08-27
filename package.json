@@ -61,15 +61,13 @@
     "babel-preset-env": "^1.4.0",
     "babel-preset-es2015-rollup": "^3.0.0",
     "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-prism": "^2.3.0",
     "react": "^15.6.2",
     "redux": "^3.7.2",
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-uglify": "^1.0.2",
     "rollup-watch": "^4.3.1"
-  },
-  "dependencies": {
-    "gitbook-plugin-prism": "^2.3.0"
   },
   "peerDependencies": {
     "redux": "^2.0.0 || ^3.0.0"

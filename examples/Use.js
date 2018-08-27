@@ -4,24 +4,24 @@ export default function Use(getState) {
 			static contextTypes = {
 				store: PropTypes.object.isRequired
 			}
-			
+
 			constructor(props, context) {
-				super(props)
-				
+				super(props, context)
+
 				this.store = props.store || context.store
 				this.state = getState()
 			}
-			
+
 			componentDidMount() {
 				this.unsubscribe = this.store.subscribe(() => {
 					this.setState(getState())
 				})
 			}
-			
+
 			componentWillUnmount() {
 				this.unsubscribe()
 			}
-			
+
 			render() {
 				return <WrappedComponent {...this.props} {...this.state} />
 			}
